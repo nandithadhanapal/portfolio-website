@@ -1,0 +1,795 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ==========================
+RESET
+========================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+html{
+scroll-padding-top:80px;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+color:#ffffff;
+overflow-x:hidden;
+line-height:1.6;
+
+/* Premium Background */
+
+background:
+linear-gradient(
+135deg,
+#020617 0%,
+#0f172a 25%,
+#1e1b4b 50%,
+#312e81 75%,
+#020617 100%
+);
+
+background-size:400% 400%;
+
+animation:bgMove 15s ease infinite;
+}
+
+/* Animated Background */
+
+@keyframes bgMove{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+/* Floating Glow Effects */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:500px;
+height:500px;
+
+top:-150px;
+left:-150px;
+
+background:
+radial-gradient(
+circle,
+rgba(56,189,248,.20),
+transparent 70%
+);
+
+z-index:-1;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:500px;
+height:500px;
+
+bottom:-150px;
+right:-150px;
+
+background:
+radial-gradient(
+circle,
+rgba(168,85,247,.20),
+transparent 70%
+);
+
+z-index:-1;
+
+}
+
+/* ==========================
+SKIP LINK
+========================== */
+
+.skip-link{
+
+position:absolute;
+left:-9999px;
+
+}
+
+.skip-link:focus{
+
+left:20px;
+top:20px;
+
+padding:12px 20px;
+
+background:white;
+color:black;
+
+border-radius:10px;
+
+z-index:9999;
+
+}
+
+/* ==========================
+NAVBAR
+========================== */
+
+header{
+
+position:sticky;
+top:0;
+z-index:1000;
+
+backdrop-filter:blur(15px);
+
+background:
+rgba(2,6,23,.65);
+
+border-bottom:
+1px solid rgba(255,255,255,.08);
+
+}
+
+nav{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:18px 30px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+.logo{
+
+font-size:28px;
+
+font-weight:800;
+
+color:#38bdf8;
+
+}
+
+.nav-links{
+
+list-style:none;
+
+display:flex;
+
+gap:30px;
+
+}
+
+.nav-links a{
+
+text-decoration:none;
+
+color:white;
+
+font-weight:500;
+
+transition:.3s;
+
+position:relative;
+
+}
+
+.nav-links a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+bottom:-5px;
+
+width:0;
+height:2px;
+
+background:#38bdf8;
+
+transition:.3s;
+
+}
+
+.nav-links a:hover::after{
+
+width:100%;
+
+}
+
+.nav-links a:hover{
+
+color:#38bdf8;
+
+}
+
+.nav-links a[aria-current="page"]{
+
+color:#38bdf8;
+
+font-weight:700;
+
+}
+
+/* ==========================
+HERO SECTION
+========================== */
+
+.hero{
+
+max-width:1200px;
+
+margin:auto;
+
+min-height:85vh;
+
+display:grid;
+
+grid-template-columns:
+1fr 1fr;
+
+align-items:center;
+
+gap:60px;
+
+padding:50px 30px;
+
+}
+
+.welcome{
+
+color:#38bdf8;
+
+font-size:18px;
+
+margin-bottom:10px;
+
+}
+
+.hero-content h2{
+
+font-size:3.2rem;
+
+line-height:1.2;
+
+margin-bottom:10px;
+
+}
+
+.hero-content span{
+
+color:#38bdf8;
+
+}
+
+.hero-content h3{
+
+font-size:1.2rem;
+
+font-weight:500;
+
+color:#cbd5e1;
+
+margin-bottom:20px;
+
+}
+
+.hero-description{
+
+max-width:550px;
+
+color:#d1d5db;
+
+font-size:1rem;
+
+line-height:1.9;
+
+margin-bottom:25px;
+
+}
+
+/* ==========================
+BUTTONS
+========================== */
+
+.hero-buttons{
+
+display:flex;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+}
+
+.primary-btn{
+
+display:inline-block;
+
+padding:12px 25px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+font-weight:600;
+
+background:
+linear-gradient(
+45deg,
+#38bdf8,
+#8b5cf6
+);
+
+color:white;
+
+transition:.3s;
+
+}
+
+.primary-btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+.secondary-btn{
+
+display:inline-block;
+
+padding:12px 25px;
+
+border-radius:50px;
+
+border:2px solid #38bdf8;
+
+text-decoration:none;
+
+font-weight:600;
+
+color:white;
+
+transition:.3s;
+
+}
+
+.secondary-btn:hover{
+
+background:#38bdf8;
+
+color:black;
+
+}
+
+/* ==========================
+PROFILE IMAGE
+========================== */
+
+.hero-image{
+
+width:300px;
+height:380px;
+
+margin:auto;
+
+border-radius:50%;
+
+padding:6px;
+
+background:
+linear-gradient(
+45deg,
+#38bdf8,
+#8b5cf6
+);
+
+box-shadow:
+0 0 30px rgba(56,189,248,.4);
+
+}
+
+.hero-image img{
+
+width:100%;
+height:100%;
+
+border-radius:50%;
+
+object-fit:cover;
+
+}
+
+/* ==========================
+SECTION
+========================== */
+
+section{
+
+max-width:1200px;
+
+margin:auto;
+
+padding:80px 30px;
+
+}
+
+section h2{
+
+font-size:2.2rem;
+
+text-align:center;
+
+margin-bottom:40px;
+
+}
+
+/* ==========================
+GLASS CARD
+========================== */
+
+.glass-card{
+
+background:
+rgba(255,255,255,.08);
+
+border:
+1px solid rgba(255,255,255,.10);
+
+backdrop-filter:blur(12px);
+
+padding:35px;
+
+border-radius:25px;
+
+}
+
+/* ==========================
+SKILLS
+========================== */
+
+.skills-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(180px,1fr));
+
+gap:20px;
+
+}
+
+.skill-card{
+
+text-align:center;
+
+padding:18px;
+
+border-radius:20px;
+
+background:
+rgba(255,255,255,.08);
+
+border:
+1px solid rgba(255,255,255,.10);
+
+transition:.3s;
+
+}
+
+.skill-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.skill-card h3{
+
+margin-bottom:10px;
+
+}
+
+/* ==========================
+ACHIEVEMENT
+========================== */
+
+.achievement-card{
+
+display:grid;
+
+grid-template-columns:
+1fr 1fr;
+
+gap:30px;
+
+align-items:center;
+
+background:
+rgba(255,255,255,.08);
+
+padding:25px;
+
+border-radius:25px;
+
+border:
+1px solid rgba(255,255,255,.10);
+
+}
+
+.achievement-card img{
+
+width:100%;
+
+max-width:350px;
+
+margin:auto;
+
+border-radius:20px;
+
+display:block;
+
+}
+
+/* ==========================
+GALLERY
+========================== */
+
+.gallery-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(300px,1fr));
+
+gap:25px;
+
+}
+
+.gallery-card{
+
+background:
+rgba(255,255,255,.08);
+
+border-radius:20px;
+
+overflow:hidden;
+
+border:
+1px solid rgba(255,255,255,.10);
+
+transition:.3s;
+
+}
+
+.gallery-card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.gallery-card img{
+
+width:100%;
+
+height:240px;
+
+object-fit:cover;
+
+display:block;
+
+}
+
+.gallery-card h3{
+
+padding:15px 20px 5px;
+
+}
+
+.gallery-card p{
+
+padding:0 20px 20px;
+
+color:#d1d5db;
+
+}
+
+/* ==========================
+RESUME
+========================== */
+
+.resume-box{
+
+text-align:center;
+
+background:
+rgba(255,255,255,.08);
+
+padding:40px;
+
+border-radius:25px;
+
+border:
+1px solid rgba(255,255,255,.10);
+
+}
+
+/* ==========================
+CONTACT FORM
+========================== */
+
+.contact-form{
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.contact-form label{
+
+font-weight:500;
+
+}
+
+.contact-form input,
+.contact-form textarea{
+
+width:100%;
+
+padding:14px;
+
+border:none;
+
+border-radius:12px;
+
+background:
+rgba(255,255,255,.08);
+
+color:white;
+
+font-family:'Poppins',sans-serif;
+
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+outline:2px solid #38bdf8;
+
+}
+
+.contact-form button{
+
+border:none;
+
+cursor:pointer;
+
+}
+
+/* ==========================
+FOOTER
+========================== */
+
+footer{
+
+margin-top:50px;
+
+padding:20px;
+
+text-align:center;
+
+background:
+rgba(2,6,23,.70);
+
+}
+.skill-card a{
+color:greenyellow;
+text-decoration:none;
+font-weight:500;
+}
+
+.skill-card a:hover{
+color:#38bdf8;
+}
+
+
+/* ==========================
+ACCESSIBILITY
+========================== */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible{
+
+outline:3px solid #38bdf8;
+outline-offset:3px;
+
+}
+
+/* ==========================
+MOBILE
+========================== */
+
+
+@media(max-width:768px){
+
+.hero{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.hero-content h2{
+
+font-size:2.5rem;
+
+}
+
+.hero-image{
+
+width:240px;
+height:240px;
+
+}
+
+.achievement-card{
+
+grid-template-columns:1fr;
+
+}
+
+nav{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.nav-links{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+section h2{
+
+font-size:1.8rem;
+
+}
+
+}
